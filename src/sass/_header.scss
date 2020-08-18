@@ -1,0 +1,56 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //border: 3px solid black;
+
+    &__text{
+        display: flex;
+        align-items: center;
+        //border: 3px solid black;
+        //text-align: center;
+
+        &--title{
+            font-size: 3.6rem;
+            font-weight: bold;
+            color: red;
+            margin-left: 5px;
+            letter-spacing: 2px;
+            align-self: center;
+
+            @include respond(phone){
+                font-size: 3rem;
+            }
+        }
+    }
+
+    &__logo{
+        width: 5rem;
+        height: 5rem;
+        transition: all .3s;
+
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+    }
+
+    &__select{
+
+        &--input{
+            width: 12rem;
+            height: 5rem;
+            font-family: inherit;
+            font-size: 1.5rem;
+            box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+            border-radius: .5rem;
+            font-weight: bold;
+            padding-left: 6px;
+            color: $color-grey;
+
+            &:focus{
+                max-width: 15rem;
+            }
+        }
+    }
+}

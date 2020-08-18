@@ -1,0 +1,93 @@
+.stats-boxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    background-color: #fff;
+    flex-basis: 33.33%;
+    height: 14rem;
+    border-radius: .5rem;
+    //cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    justify-content: space-around;
+    color: $color-grey;
+    border-top: 1rem solid transparent;
+    box-shadow: 0 3px 5px rgba($color-black, .2);
+    letter-spacing: .15rem;
+
+    @include respond(small-phone){
+        letter-spacing: inherit;
+    }
+
+    &:not(:last-child) {
+        margin-right: 1.5rem;
+    }
+
+    &__title {
+        font-size: 1.4rem;
+    }
+
+    &__new {
+        font-size: 2.7rem;
+        font-weight: bold;
+
+        &::before {
+            content: "+ ";
+        }
+    }
+
+    &__total {
+        font-size: 1.4rem;
+
+        &::before {
+            content: "+ ";
+        }
+
+        &::after {
+            content: " Total";
+        }
+
+        @include respond(small-phone){
+            &::after {
+                content: "";
+            }
+        }
+    }
+
+    &--1 {
+
+        &:focus {
+            border-top: 1rem solid $color-orange;
+            outline: none;
+        }
+
+        & > :nth-child(2){
+            color: $color-orange;
+        }
+    }
+
+    &--2 {
+        &:focus {
+            border-top: 1rem solid $color-green;
+            outline: none;
+        }
+
+        & > :nth-child(2){
+            color: $color-green;
+        }
+    }
+
+    &--3 {
+        &:focus {
+            border-top: 1rem solid $color-red;
+            outline: none;
+        }
+
+        & > :nth-child(2){
+            color: $color-red;
+        }
+    }
+}

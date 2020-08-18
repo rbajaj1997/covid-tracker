@@ -1,0 +1,51 @@
+.app {
+    display: grid;
+    margin: 2rem;
+    grid-template-columns: 3fr 1fr;
+    gap: 3rem;
+}
+
+.header {
+    grid-column: 1/2;
+}
+
+.stats-boxes{
+    grid-column: 1/2;
+}
+
+.map{
+    grid-column: 1/2;
+}
+
+.stats-table{
+    grid-column: 2/-1;
+    grid-row: 1/ span 3
+}
+
+.news{
+    grid-column: 1/-1;
+}
+
+.footer {
+    grid-column: 1/-1;
+}
+
+@include respond(small-desktop){
+    .header {
+        grid-column: 1/-1;
+    }
+
+    .stats-boxes{
+        grid-column: 1/-1;
+    }
+
+    .map{
+        grid-column: 1/-1;
+    }
+
+    .stats-table{
+        grid-column: 1/-1;
+        grid-row: 4/ span 3
+    }
+
+}

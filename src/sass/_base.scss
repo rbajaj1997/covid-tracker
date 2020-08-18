@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%; // 1 rem -> 10px
+
+    @include respond(tab-land){
+        font-size: 56.25%; // 1 rem -> 9px
+    }
+
+    @include respond(phone){
+        font-size: 50%; // 1 rem -> 8px
+    }
+}
+
+body {
+    background-color: #f6f9fc;
+    font-family: 'Open Sans', sans-serif;
+}
