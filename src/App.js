@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.scss';
 import axios from 'axios';
 import Header from './components/Header';
+import Stats from './components/Stats';
 
 export default function App() {
 	const [globalData, setGlobalData] = useState({});
@@ -13,11 +14,10 @@ export default function App() {
 	}
 
 	useEffect(() => {
-		const req1 = axios.get('https://disease.sh/v3/covid-19/all');
-		const req2 = axios.get('https://disease.sh/v3/covid-19/countries?sort=cases&allowNull=true');
+		const req1 = axios.get(`https://disease.sh/v3/covid-19/all?timestamp=${new Date().getTime()}`);
+		const req2 = axios.get(`https://disease.sh/v3/covid-19/countries?sort=cases&allowNull=true&timestamp=${new Date().getTime()}`);
 
 		Promise.all([req1, req2]).then((values) => {
-			console.log("Promise Resolved!");
 			setGlobalData(values[0].data);
 			setCountryData(values[1].data);
 		});
@@ -29,6 +29,11 @@ export default function App() {
 				countryData={countryData}
 				selectedCountry={selectedCountry}
 				handleCountryChange={handleCountryChange}
+			/>
+			<Stats
+				globalData={globalData}
+				countryData={countryData}
+				selectedCountry={selectedCountry}
 			/>
 		</div>
 	);

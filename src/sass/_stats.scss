@@ -1,6 +1,25 @@
 .stats-boxes {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    &--boxes{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &--time{
+        align-self: flex-end;
+        font-size: 1.4rem;
+        letter-spacing: .15rem;
+        //border: 2px solid black;
+        color: $color-grey;
+        margin-top: 1.5rem;
+        margin-right: .5rem;
+
+        @include respond(phone){
+            align-self: center;
+        }
+    }
 }
 
 .box {

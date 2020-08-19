@@ -17,7 +17,7 @@ export default function Header(props) {
                     value={selectedCountry}
                     onChange={handleCountryChange}
                 >
-                    <option key="-1" value="-1">Worldwide</option>
+                    <option key="-1" value={-1}>Worldwide</option>
                     {countryData.map(country => {
                         if (!country.countryInfo._id) {
                             return false;
