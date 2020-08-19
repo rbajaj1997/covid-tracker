@@ -3,6 +3,7 @@ import './App.scss';
 import axios from 'axios';
 import Header from './components/Header';
 import Stats from './components/Stats';
+import Table from './components/Table';
 
 export default function App() {
 	const [globalData, setGlobalData] = useState({});
@@ -34,6 +35,9 @@ export default function App() {
 				globalData={globalData}
 				countryData={countryData}
 				selectedCountry={selectedCountry}
+			/>
+			<Table
+				countryData={countryData}
 			/>
 		</div>
 	);

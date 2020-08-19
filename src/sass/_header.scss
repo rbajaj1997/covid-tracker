@@ -2,13 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //border: 3px solid black;
+    //max-height: fit-content;
 
     &__text{
         display: flex;
         align-items: center;
-        //border: 3px solid black;
-        //text-align: center;
 
         &--title{
             font-size: 3.6rem;
@@ -47,6 +45,10 @@
             font-weight: bold;
             padding-left: 6px;
             color: $color-grey;
+
+            option {
+                width: 12rem;
+            }
 
             &:focus{
                 max-width: 15rem;
