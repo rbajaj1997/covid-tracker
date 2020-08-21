@@ -14,8 +14,44 @@
         margin: 1rem 0;
     }
 
+    &--pagination{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        transition: all .3s;
+        margin: .5rem;
+        align-self: center;
+
+        button {
+            background-color: #EDEDED;
+            padding: .5rem 1rem;
+            border-radius: 3rem;
+            font-style: inherit;
+            font-weight: 800;
+            color: #494949;
+            border: none;
+            outline: none;
+
+            &:not(:last-child){
+                margin-right: 2rem;
+            }
+
+            &:hover{
+                transform: scale(1.1);
+                cursor: pointer;
+                outline: none;
+            }
+
+            &:disabled{
+                cursor: default;
+                transform: scale(1);
+                color: #A4A4A4;
+            }
+        }
+    }
+
     @include respond(small-desktop){
-        height: 65vh;
+        height: 75vh;
     }
 }
 
@@ -23,6 +59,7 @@
     width: 100%;
     color: $color-grey;
     font-size: 1.4rem;
+    flex: 1;
 
     input {
         width: 99%;

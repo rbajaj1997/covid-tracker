@@ -41,7 +41,9 @@ export default function App() {
 				countryData={countryData}
 			/>
 
-			<StatsMap />
+			<StatsMap
+				countryData={countryData}
+				selectedCountry={selectedCountry} />
 		</div>
 	);
 }

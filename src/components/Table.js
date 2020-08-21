@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { useTable, useGlobalFilter, useAsyncDebounce } from 'react-table'
+import { useTable, useGlobalFilter, useAsyncDebounce, usePagination } from 'react-table'
 
 // UI for filtering
 function GlobalFilter({ globalFilter, setGlobalFilter }) {
@@ -9,11 +9,11 @@ function GlobalFilter({ globalFilter, setGlobalFilter }) {
     }, 200)
 
     return (
-            <input
-                value={value || ""}
-                onChange={e => { setValue(e.target.value); onChange(e.target.value); }}
-                placeholder={'Search for a country..'}
-            />
+        <input
+            value={value || ""}
+            onChange={e => { setValue(e.target.value); onChange(e.target.value); }}
+            placeholder={'Search for a country..'}
+        />
     )
 }
 
@@ -38,7 +38,7 @@ export default function Table(props) {
         return countryData.map((elem) => { return { country: elem.country, active: elem.cases - elem.recovered - elem.deaths } });
     }, [countryData])
 
-    const { getTableProps, getTableBodyProps, rows, prepareRow, visibleColumns, state, setGlobalFilter } = useTable({ columns, data, }, useGlobalFilter)
+    const { getTableProps, getTableBodyProps, prepareRow, visibleColumns, state, setGlobalFilter, page, canPreviousPage, canNextPage, pageCount, gotoPage, nextPage, previousPage } = useTable({ columns, data, initialState: { pageSize: 15 } }, useGlobalFilter, usePagination)
 
     return (
         <div className="stats-table">
@@ -59,7 +59,7 @@ export default function Table(props) {
                     </tr>
                 </thead>
                 <tbody {...getTableBodyProps()}>
-                    {rows.map((row, i) => {
+                    {page.map((row, i) => {
                         prepareRow(row)
                         return (
                             <tr {...row.getRowProps()}>
@@ -71,6 +71,20 @@ export default function Table(props) {
                     })}
                 </tbody>
             </table>
+            <div className="stats-table--pagination">
+                <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+                    {'<<'}
+                </button>{' '}
+                <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+                    {'<'}
+                </button>{' '}
+                <button onClick={() => nextPage()} disabled={!canNextPage}>
+                    {'>'}
+                </button>{' '}
+                <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+                    {'>>'}
+                </button>{' '}
+            </div>
         </div>
     );
 } 
