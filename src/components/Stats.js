@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import numeral from "numeral"
 
 export default function Stats(props) {
-    const { countryData, selectedCountry, globalData } = props;
+    const { countryData, selectedCountry, globalData, type, handleTypeChange } = props;
     const [info, setInfo] = useState({});
     //console.log(info);
 
@@ -36,19 +36,19 @@ export default function Stats(props) {
     return (
         <div className="stats-boxes">
             <div className="stats-boxes--boxes">
-                <div tabIndex="-1" className="box box--1">
+                <div tabIndex="1" className={`box box--1 ${type==="NEW" ? 'selected' : ''}`} onClick={() => {handleTypeChange("NEW")}}>
                     <div className="box__title">New Cases</div>
                     <div className="box__new">{modifyNum(info.todayCases)}</div>
                     <div className="box__total">{modifyNum(info.cases)}</div>
                 </div>
 
-                <div tabIndex="-1" className="box box--2">
+                <div tabIndex="-1" className={`box box--2 ${type==="RECOV" ? 'selected' : ''}`} onClick={() => {handleTypeChange("RECOV")}}>
                     <div className="box__title">Recovered</div>
                     <div className="box__new">{modifyNum(info.todayRecovered)}</div>
                     <div className="box__total">{modifyNum(info.recovered)}</div>
                 </div>
 
-                <div tabIndex="-1" className="box box--3">
+                <div tabIndex="-1" className={`box box--3 ${type==="DEATH" ? 'selected' : ''}`} onClick={() => {handleTypeChange("DEATH")}}>
                     <div className="box__title">Deaths</div>
                     <div className="box__new">{modifyNum(info.todayDeaths)}</div>
                     <div className="box__total">{modifyNum(info.deaths)}</div>

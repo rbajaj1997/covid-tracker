@@ -10,9 +10,14 @@ export default function App() {
 	const [globalData, setGlobalData] = useState({});
 	const [countryData, setCountryData] = useState([]);
 	const [selectedCountry, setSelectedCountry] = useState(-1);
+	const [type, setType] = useState("NEW");
 
 	const handleCountryChange = (event) => {
 		setSelectedCountry(event.target.value);
+	}
+
+	const handleTypeChange = (change) => {
+		setType(change);
 	}
 
 	useEffect(() => {
@@ -36,6 +41,8 @@ export default function App() {
 				globalData={globalData}
 				countryData={countryData}
 				selectedCountry={selectedCountry}
+				type={type}
+				handleTypeChange={handleTypeChange}
 			/>
 			<Table
 				countryData={countryData}
@@ -43,7 +50,9 @@ export default function App() {
 
 			<StatsMap
 				countryData={countryData}
-				selectedCountry={selectedCountry} />
+				selectedCountry={selectedCountry}
+				type={type}
+			/>
 		</div>
 	);
 }

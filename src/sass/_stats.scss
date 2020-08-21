@@ -36,6 +36,8 @@
     border-top: 1rem solid transparent;
     box-shadow: 0 3px 5px rgba($color-black, .2);
     letter-spacing: .15rem;
+    outline: none;
+    cursor: pointer;
 
     @include respond(small-phone){
         letter-spacing: inherit;
@@ -77,10 +79,9 @@
     }
 
     &--1 {
-
-        &:focus {
+        
+        &.selected{
             border-top: 1rem solid $color-orange;
-            outline: none;
         }
 
         & > :nth-child(2){
@@ -89,9 +90,9 @@
     }
 
     &--2 {
-        &:focus {
+        
+        &.selected{
             border-top: 1rem solid $color-green;
-            outline: none;
         }
 
         & > :nth-child(2){
@@ -100,9 +101,9 @@
     }
 
     &--3 {
-        &:focus {
+        
+        &.selected{
             border-top: 1rem solid $color-red;
-            outline: none;
         }
 
         & > :nth-child(2){
