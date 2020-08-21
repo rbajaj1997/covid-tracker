@@ -6,7 +6,7 @@
     border-radius: .6rem;
     padding: .5rem 1rem;
     overflow-y: scroll;
-    height: 85vh;
+    height: 93vh;
 
     &--header {
         font-size: 1.8rem;
@@ -25,7 +25,7 @@
     font-size: 1.4rem;
 
     input {
-        width: 100%;
+        width: 99%;
         padding: .6rem;
         margin-bottom: .8rem;
         font-style: inherit;
@@ -34,6 +34,7 @@
         border: 1.5px solid $color-grey-light;
         outline: none;
         border-radius: 1rem;
+        transition: all .2s;
 
         &::placeholder {
             font-style: italic;
@@ -43,6 +44,7 @@
         &:focus{
             border: 2px solid $color-grey-light;
             outline: none;
+            transform: scaleX(1.02);
         }
     }
 

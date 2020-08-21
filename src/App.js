@@ -4,6 +4,7 @@ import axios from 'axios';
 import Header from './components/Header';
 import Stats from './components/Stats';
 import Table from './components/Table';
+import StatsMap from './components/StatsMap';
 
 export default function App() {
 	const [globalData, setGlobalData] = useState({});
@@ -39,6 +40,8 @@ export default function App() {
 			<Table
 				countryData={countryData}
 			/>
+
+			<StatsMap />
 		</div>
 	);
 }

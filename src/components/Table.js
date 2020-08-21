@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { useTable, useFilters, useGlobalFilter, useAsyncDebounce } from 'react-table'
+import { useTable, useGlobalFilter, useAsyncDebounce } from 'react-table'
 
 // UI for filtering
 function GlobalFilter({ globalFilter, setGlobalFilter }) {
@@ -38,11 +38,11 @@ export default function Table(props) {
         return countryData.map((elem) => { return { country: elem.country, active: elem.cases - elem.recovered - elem.deaths } });
     }, [countryData])
 
-    const { getTableProps, getTableBodyProps, rows, prepareRow, visibleColumns, state, setGlobalFilter } = useTable({ columns, data, }, useFilters, useGlobalFilter)
+    const { getTableProps, getTableBodyProps, rows, prepareRow, visibleColumns, state, setGlobalFilter } = useTable({ columns, data, }, useGlobalFilter)
 
     return (
         <div className="stats-table">
-            <h2 class="stats-table--header">
+            <h2 className="stats-table--header">
                 Live Cases by Country
             </h2>
             <table {...getTableProps()} className="table">
