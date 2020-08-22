@@ -11,6 +11,11 @@
     grid-row: 1/ 2;
 }
 
+.loader{
+    grid-column: 1/-1;
+    grid-row: 1/ -1;
+}
+
 .stats-boxes{
     grid-column: 1/2;
     grid-row: 2/ 3;

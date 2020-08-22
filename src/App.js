@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import 'react-tabs/style/react-tabs.css';
 import './App.scss';
 import axios from 'axios';
+import Loader from './components/Loader';
 import Header from './components/Header';
 import Stats from './components/Stats';
 import Table from './components/Table';
@@ -14,6 +15,7 @@ export default function App() {
 	const [countryData, setCountryData] = useState([]);
 	const [selectedCountry, setSelectedCountry] = useState(-1);
 	const [type, setType] = useState("NEW");
+	const [loading, setLoading] = useState(true);
 
 	const handleCountryChange = (event) => {
 		setSelectedCountry(event.target.value);
@@ -30,37 +32,42 @@ export default function App() {
 		Promise.all([req1, req2]).then((values) => {
 			setGlobalData(values[0].data);
 			setCountryData(values[1].data);
-		});
+			setLoading(false);
+		}).catch((err) => {
+			setLoading(false);
+			alert("Error while fetching data!");
+		})
 	}, [])
 
 	return (
 		<div className="app">
-			<Header
-				countryData={countryData}
-				selectedCountry={selectedCountry}
-				handleCountryChange={handleCountryChange}
-			/>
-			<Stats
-				globalData={globalData}
-				countryData={countryData}
-				selectedCountry={selectedCountry}
-				type={type}
-				handleTypeChange={handleTypeChange}
-			/>
-			<Table
-				countryData={countryData}
-			/>
+			{loading ? <Loader /> : <Fragment>
+				<Header
+					countryData={countryData}
+					selectedCountry={selectedCountry}
+					handleCountryChange={handleCountryChange}
+				/>
+				<Stats
+					globalData={globalData}
+					countryData={countryData}
+					selectedCountry={selectedCountry}
+					type={type}
+					handleTypeChange={handleTypeChange}
+				/>
+				<Table
+					countryData={countryData}
+				/>
 
-			<StatsMap
-				countryData={countryData}
-				selectedCountry={selectedCountry}
-				type={type}
-			/>
+				<StatsMap
+					countryData={countryData}
+					selectedCountry={selectedCountry}
+					type={type}
+				/>
 
-			<Info />
+				<Info />
 
-			<Footer />
-
+				<Footer />
+			</Fragment>}
 		</div>
 	);
 }
