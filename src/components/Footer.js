@@ -18,7 +18,7 @@ export default function Footer() {
             LinkedIn
     </a>
         <a
-            href="https://github.com/rbajaj1997"
+            href="https://github.com/rbajaj1997/covid-tracker"
             target="_blank"
             rel="noopener noreferrer"
             className="footer--link"

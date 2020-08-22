@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/covid-tracker/static/css/main.594baf10.chunk.css",
+    "main.js": "/covid-tracker/static/js/main.1fc14a5f.chunk.js",
+    "main.js.map": "/covid-tracker/static/js/main.1fc14a5f.chunk.js.map",
+    "runtime-main.js": "/covid-tracker/static/js/runtime-main.948b6ba1.js",
+    "runtime-main.js.map": "/covid-tracker/static/js/runtime-main.948b6ba1.js.map",
+    "static/css/2.d958fb3d.chunk.css": "/covid-tracker/static/css/2.d958fb3d.chunk.css",
+    "static/js/2.f3834345.chunk.js": "/covid-tracker/static/js/2.f3834345.chunk.js",
+    "static/js/2.f3834345.chunk.js.map": "/covid-tracker/static/js/2.f3834345.chunk.js.map",
+    "index.html": "/covid-tracker/index.html",
+    "precache-manifest.90b5b43fd1e4c01463dd964bef34d4be.js": "/covid-tracker/precache-manifest.90b5b43fd1e4c01463dd964bef34d4be.js",
+    "service-worker.js": "/covid-tracker/service-worker.js",
+    "static/css/2.d958fb3d.chunk.css.map": "/covid-tracker/static/css/2.d958fb3d.chunk.css.map",
+    "static/css/main.594baf10.chunk.css.map": "/covid-tracker/static/css/main.594baf10.chunk.css.map",
+    "static/js/2.f3834345.chunk.js.LICENSE.txt": "/covid-tracker/static/js/2.f3834345.chunk.js.LICENSE.txt",
+    "static/media/Conjunctivitis.svg": "/covid-tracker/static/media/Conjunctivitis.21f702d9.svg",
+    "static/media/Diarrhea.svg": "/covid-tracker/static/media/Diarrhea.6b4bcf81.svg",
+    "static/media/ache.svg": "/covid-tracker/static/media/ache.0d18e232.svg",
+    "static/media/cough.svg": "/covid-tracker/static/media/cough.7f3c45a2.svg",
+    "static/media/distance.svg": "/covid-tracker/static/media/distance.510bf4af.svg",
+    "static/media/fatigue.svg": "/covid-tracker/static/media/fatigue.d2869c45.svg",
+    "static/media/fever.svg": "/covid-tracker/static/media/fever.a33924c7.svg",
+    "static/media/hands.svg": "/covid-tracker/static/media/hands.b8374ff5.svg",
+    "static/media/headache.svg": "/covid-tracker/static/media/headache.017cd718.svg",
+    "static/media/home.svg": "/covid-tracker/static/media/home.b03d9b1a.svg",
+    "static/media/mask.svg": "/covid-tracker/static/media/mask.49a9b544.svg",
+    "static/media/medical.svg": "/covid-tracker/static/media/medical.b417ee3d.svg",
+    "static/media/rash.svg": "/covid-tracker/static/media/rash.1efa8b1d.svg",
+    "static/media/sneeze.svg": "/covid-tracker/static/media/sneeze.52b31552.svg",
+    "static/media/sorethroat.svg": "/covid-tracker/static/media/sorethroat.fb22c814.svg",
+    "static/media/virus.svg": "/covid-tracker/static/media/virus.8145c6ff.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.948b6ba1.js",
+    "static/css/2.d958fb3d.chunk.css",
+    "static/js/2.f3834345.chunk.js",
+    "static/css/main.594baf10.chunk.css",
+    "static/js/main.1fc14a5f.chunk.js"
+  ]
+}
