@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import 'react-tabs/style/react-tabs.css';
 import './App.scss';
 import axios from 'axios';
 import Header from './components/Header';
 import Stats from './components/Stats';
 import Table from './components/Table';
 import StatsMap from './components/StatsMap';
+import Info from './components/Info';
+import Footer from './components/Footer';
 
 export default function App() {
 	const [globalData, setGlobalData] = useState({});
@@ -53,6 +56,11 @@ export default function App() {
 				selectedCountry={selectedCountry}
 				type={type}
 			/>
+
+			<Info />
+
+			<Footer />
+
 		</div>
 	);
 }

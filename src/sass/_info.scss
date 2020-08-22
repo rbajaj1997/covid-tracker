@@ -1,0 +1,102 @@
+.react-tabs {
+    font-size: 1.3rem;
+
+    &__tab-list {
+        font-size: 1.5rem;
+
+        li {
+            padding: 1rem 1.5rem;
+        }
+    }
+
+    &__tab {
+
+        &--selected {
+            font-weight: bold;
+            color: $color-grey;
+        }
+    }
+}
+
+.info {
+    //border: 2px solid black;
+    padding: 2rem;
+    background-color: #fff;
+    color: $color-grey;
+    box-shadow: 0 3px 5px rgba($color-black, .2);
+    border-radius: .6rem;
+}
+
+.prevention-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    //padding: 1rem 2rem;
+
+    .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30rem;
+        height: 25rem;
+        padding: 2.5rem;
+        //border: 2px solid black;
+        text-align: center;
+        color: $color-grey;
+
+        img {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        &__head{
+            font-weight: bold;
+            font-size: 2rem;
+            letter-spacing: .1rem;
+            margin-top: .5rem;
+        }
+
+        &__text {
+            margin-top: .5rem;
+            letter-spacing: .1rem;
+        }
+    }
+}
+
+
+.symtoms-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    //padding: 1rem 2rem;
+
+    .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30rem;
+        height: 21rem;
+        padding: 2rem;
+        //border: 2px solid black;
+        text-align: center;
+
+        img {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        &__head{
+            font-weight: bold;
+            font-size: 2rem;
+            letter-spacing: .1rem;
+            margin-top: .5rem;
+        }
+
+        &__text {
+            margin-top: .5rem;
+            letter-spacing: .1rem;
+        }
+    }
+}

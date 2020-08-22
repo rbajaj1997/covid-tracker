@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Map, TileLayer, Popup, CircleMarker } from 'react-leaflet'
+import numeral from "numeral"
 import 'leaflet/dist/leaflet.css';
 
 export default function StatsMap(props) {
@@ -57,6 +58,8 @@ export default function StatsMap(props) {
                                 radius={Math.sqrt(country[caseType]) * multiplier}
                                 key={country.countryInfo._id}
                                 fillOpacity={0.4}
+                                onMouseOver={(e) => { e.target.openPopup() }}
+                                onMouseOut={(e) => { e.target.closePopup() }}
                             >
                                 <Popup>
                                     <h2 style={{ textAlign: "center" }}>
@@ -64,13 +67,13 @@ export default function StatsMap(props) {
                                     </h2>
                                     <br />
                                     <div>
-                                        <strong>Cases: </strong>{country.cases}
+                                        <strong>Cases: </strong>{numeral(country.cases).format()}
                                     </div>
                                     <div>
-                                        <strong>Recovered: </strong> {country.recovered}
+                                        <strong>Recovered: </strong> {numeral(country.recovered).format()}
                                     </div>
                                     <div>
-                                        <strong>Deaths: </strong> {country.deaths}
+                                        <strong>Deaths: </strong> {numeral(country.deaths).format()}
                                     </div>
                                 </Popup>
                             </CircleMarker>

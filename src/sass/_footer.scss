@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3rem;
+    font-weight: bold;
+    //border: 2px solid black;
+
+    &--link{
+        text-decoration: none;
+        color: $color-grey;
+        transition: all .2s;
+        padding: .5rem 0;
+        border-bottom: .5rem solid transparent;
+
+        &:hover{
+            transform: scale(1.06);
+            color: lighten($color-grey, 20%) ;
+            border-bottom: .5rem solid lighten($color-grey, 20%);
+        }
+    }
+
+    a {
+        font-size: 1.8rem;
+        &:not(:last-child) {
+            margin-right: 2.5rem;
+        }
+    }
+}
