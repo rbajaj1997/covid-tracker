@@ -11,27 +11,27 @@
     grid-row: 1/ 2;
 }
 
-.loader{
+.loader {
     grid-column: 1/-1;
     grid-row: 1/ -1;
 }
 
-.stats-boxes{
+.stats-boxes {
     grid-column: 1/2;
     grid-row: 2/ 3;
 }
 
-.map{
+.map {
     grid-column: 1/2;
     grid-row: 3/ 4;
 }
 
-.stats-table{
+.stats-table {
     grid-column: 2/-1;
     grid-row: 1/ 4;
 }
 
-.info{
+.info {
     grid-column: 1/-1;
     grid-row: 4/ 5;
 }
@@ -41,25 +41,25 @@
     grid-row: 5/ 6;
 }
 
-@include respond(small-desktop){
+@include respond(small-desktop) {
     .header {
         grid-column: 1/-1;
     }
 
-    .stats-boxes{
+    .stats-boxes {
         grid-column: 1/-1;
     }
 
-    .map{
+    .map {
         grid-column: 1/-1;
     }
 
-    .stats-table{
+    .stats-table {
         grid-column: 1/-1;
         grid-row: 4/ span 1
     }
 
-    .info{
+    .info {
         grid-row: 5/ 6;
     }
 

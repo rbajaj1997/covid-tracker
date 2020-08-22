@@ -40,8 +40,8 @@ export default function App() {
 	}, [])
 
 	return (
-		<div className="app">
-			{loading ? <Loader /> : <Fragment>
+		<div className={`app ${loading ? '' : 'fadeIn-animation'}`}>
+			{loading ? <Loader loading={loading} /> : <Fragment>
 				<Header
 					countryData={countryData}
 					selectedCountry={selectedCountry}

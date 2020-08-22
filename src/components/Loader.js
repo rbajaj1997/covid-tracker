@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Loader() {
-    return <div className="loader">
+export default function Loader(props) {
+    return <div className={`loader ${props.loading ? '' : 'fadeOut-animation'}`}>
     </div>
 }
