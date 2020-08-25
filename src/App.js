@@ -26,8 +26,13 @@ export default function App() {
 	}
 
 	useEffect(() => {
-		const req1 = axios.get(`https://disease.sh/v3/covid-19/all?timestamp=${new Date().getTime()}`);
-		const req2 = axios.get(`https://disease.sh/v3/covid-19/countries?sort=cases&allowNull=true&timestamp=${new Date().getTime()}`);
+		const headers = {
+			'Cache-Control': 'no-cache',
+			'Content-Type': 'application/json'
+		};
+
+		const req1 = axios.get(`https://disease.sh/v3/covid-19/all`, {headers});
+		const req2 = axios.get(`https://disease.sh/v3/covid-19/countries?sort=cases&allowNull=true`, {headers});
 
 		Promise.all([req1, req2]).then((values) => {
 			setGlobalData(values[0].data);
