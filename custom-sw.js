@@ -1,4 +1,4 @@
-importScripts("/covid-tracker/precache-manifest.c75a8240346ffa0d5feefba9f8177e2a.js", "/covid-tracker/workbox-v4.3.1/workbox-sw.js");
+importScripts("/covid-tracker/precache-manifest.3c13af274a4a57a2e524992ec14b43cf.js", "/covid-tracker/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/covid-tracker/workbox-v4.3.1"});
 /* eslint-disable no-undef */
 
@@ -18,7 +18,9 @@ self.addEventListener('activate', event => event.waitUntil(self.clients.claim())
 workbox.precaching.precacheAndRoute(self.__precacheManifest);
 
 // app-shell
-workbox.routing.registerRoute("/", new workbox.strategies.StaleWhileRevalidate());
+workbox.routing.registerRoute("/", new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'static-data'
+}));
 
 // JSON data
 workbox.routing.registerRoute(/.*disease.*/, new workbox.strategies.NetworkFirst({
