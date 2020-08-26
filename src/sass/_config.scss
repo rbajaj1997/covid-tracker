@@ -5,42 +5,6 @@ $color-orange: #F1A139;
 $color-red: #F23A3A;
 $color-black: #000000;
 
-.fadeIn-animation {
-    animation: fadeIn 1.7s;
-    -webkit-animation: fadeIn 1.7s;
-    -moz-animation: fadeIn 1.7s;
-    -ms-animation: fadeIn 1.7s;
-    -o-animation: fadeIn 1.7s;
-}
-
-.fadeOut-animation {
-    animation: fadeOut 1.7s;
-    -webkit-animation: fadeOut 1.7s;
-    -moz-animation: fadeOut 1.7s;
-    -ms-animation: fadeOut 1.7s;
-    -o-animation: fadeOut 1.7s;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
 
 //Media Query manager
 

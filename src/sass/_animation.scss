@@ -1,0 +1,53 @@
+.fadeIn-animation {
+    animation: fadeIn 1.7s;
+    -webkit-animation: fadeIn 1.7s;
+    -moz-animation: fadeIn 1.7s;
+    -ms-animation: fadeIn 1.7s;
+    -o-animation: fadeIn 1.7s;
+}
+
+.fadeOut-animation {
+    animation: fadeOut 1.7s;
+    -webkit-animation: fadeOut 1.7s;
+    -moz-animation: fadeOut 1.7s;
+    -ms-animation: fadeOut 1.7s;
+    -o-animation: fadeOut 1.7s;
+}
+
+.leftToRight-animation {
+    animation: leftToRight 1s 1 ease-in-out;
+    -webkit-animation: leftToRight 1s 1 ease-in-out;
+    -moz-animation: leftToRight 1s 1 ease-in-out;
+    -ms-animation: leftToRight 1s 1 ease-in-out;
+    -o-animation: leftToRight 1s 1 ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes leftToRight {
+    0% {
+        transform: translateX(-200%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
