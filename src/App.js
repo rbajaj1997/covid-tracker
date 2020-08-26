@@ -9,6 +9,7 @@ import Table from './components/Table';
 import StatsMap from './components/StatsMap';
 import Info from './components/Info';
 import Footer from './components/Footer';
+import Snackbar from './components/Snackbar';
 
 export default function App() {
 	const [globalData, setGlobalData] = useState({});
@@ -31,8 +32,8 @@ export default function App() {
 			'Content-Type': 'application/json'
 		};
 
-		const req1 = axios.get(`https://disease.sh/v3/covid-19/all`, {headers});
-		const req2 = axios.get(`https://disease.sh/v3/covid-19/countries?sort=cases&allowNull=true`, {headers});
+		const req1 = axios.get(`https://disease.sh/v3/covid-19/all`, { headers });
+		const req2 = axios.get(`https://disease.sh/v3/covid-19/countries?sort=cases&allowNull=true`, { headers });
 
 		Promise.all([req1, req2]).then((values) => {
 			setGlobalData(values[0].data);
@@ -70,6 +71,8 @@ export default function App() {
 				/>
 
 				<Info />
+
+				{navigator.onLine ? null : <Snackbar message="Application offline!" time={10000} />}
 
 				<Footer />
 			</Fragment>}
