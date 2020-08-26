@@ -1,5 +1,5 @@
-importScripts("/covid-tracker/precache-manifest.3c13af274a4a57a2e524992ec14b43cf.js", "/covid-tracker/workbox-v4.3.1/workbox-sw.js");
-workbox.setConfig({modulePathPrefix: "/covid-tracker/workbox-v4.3.1"});
+importScripts("/precache-manifest.836e38eaff1ab4c7991fc5b710417560.js", "/workbox-v4.3.1/workbox-sw.js");
+workbox.setConfig({modulePathPrefix: "/workbox-v4.3.1"});
 /* eslint-disable no-undef */
 
 console.log("Hello from custom-sw.js!");
