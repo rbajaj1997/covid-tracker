@@ -10,16 +10,37 @@ import StatsMap from './components/StatsMap';
 import Info from './components/Info';
 import Footer from './components/Footer';
 import Snackbar from './components/Snackbar';
+import A2HS from './components/A2HS';
 
-export default function App() {
+export default function App(props) {
 	const [globalData, setGlobalData] = useState({});
 	const [countryData, setCountryData] = useState([]);
 	const [selectedCountry, setSelectedCountry] = useState(-1);
 	const [type, setType] = useState("NEW");
 	const [loading, setLoading] = useState(true);
+	const [deferredPrompt, setDeferredPrompt] = useState(null);
 
 	const handleCountryChange = (event) => {
 		setSelectedCountry(event.target.value);
+	}
+
+	//*** Code for Install Prompt */ 
+	window.addEventListener('beforeinstallprompt', (e) => {
+		e.preventDefault();
+		console.log('Before Install Prompt fired!');
+		setDeferredPrompt(e);
+		return false;
+	});
+
+	const onButtonClick = () => {
+		deferredPrompt.prompt();
+		deferredPrompt.userChoice.then((choice) => {
+			if(choice.outcome === 'dismissed'){
+				console.log('Declined!!');
+			}else{
+				setDeferredPrompt(null);
+			}
+		})
 	}
 
 	const handleTypeChange = (change) => {
@@ -64,6 +85,9 @@ export default function App() {
 					countryData={countryData}
 				/>
 
+				{(!deferredPrompt || !navigator.onLine) ? null: <A2HS type={type} handleButtonClick={onButtonClick} />}
+
+
 				<StatsMap
 					countryData={countryData}
 					selectedCountry={selectedCountry}
@@ -72,7 +96,7 @@ export default function App() {
 
 				<Info />
 
-				{navigator.onLine ? null : <Snackbar message="Application offline!" time={10000} />}
+				{navigator.onLine ? null : <Snackbar message="Application offline!" time={8000} />}
 
 				<Footer />
 			</Fragment>}

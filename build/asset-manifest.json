@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.594baf10.chunk.css",
-    "main.js": "/static/js/main.7eab4946.chunk.js",
-    "main.js.map": "/static/js/main.7eab4946.chunk.js.map",
+    "main.css": "/static/css/main.cfd0839d.chunk.css",
+    "main.js": "/static/js/main.ae34a86b.chunk.js",
+    "main.js.map": "/static/js/main.ae34a86b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.396c5088.js",
     "runtime-main.js.map": "/static/js/runtime-main.396c5088.js.map",
     "static/css/2.d958fb3d.chunk.css": "/static/css/2.d958fb3d.chunk.css",
-    "static/js/2.f3834345.chunk.js": "/static/js/2.f3834345.chunk.js",
-    "static/js/2.f3834345.chunk.js.map": "/static/js/2.f3834345.chunk.js.map",
+    "static/js/2.7872ecbc.chunk.js": "/static/js/2.7872ecbc.chunk.js",
+    "static/js/2.7872ecbc.chunk.js.map": "/static/js/2.7872ecbc.chunk.js.map",
     "custom-sw.js": "/custom-sw.js",
     "index.html": "/index.html",
-    "precache-manifest.8c9689a070e87fb263e9f04641a0a26e.js": "/precache-manifest.8c9689a070e87fb263e9f04641a0a26e.js",
-    "precache-manifest.94d15186c70da7d872df8faed97c5952.js": "/precache-manifest.94d15186c70da7d872df8faed97c5952.js",
+    "precache-manifest.6a2790e31a7fe9f6c833db2beae6e5bb.js": "/precache-manifest.6a2790e31a7fe9f6c833db2beae6e5bb.js",
+    "precache-manifest.836e38eaff1ab4c7991fc5b710417560.js": "/precache-manifest.836e38eaff1ab4c7991fc5b710417560.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.d958fb3d.chunk.css.map": "/static/css/2.d958fb3d.chunk.css.map",
-    "static/css/main.594baf10.chunk.css.map": "/static/css/main.594baf10.chunk.css.map",
-    "static/js/2.f3834345.chunk.js.LICENSE.txt": "/static/js/2.f3834345.chunk.js.LICENSE.txt",
+    "static/css/main.cfd0839d.chunk.css.map": "/static/css/main.cfd0839d.chunk.css.map",
+    "static/js/2.7872ecbc.chunk.js.LICENSE.txt": "/static/js/2.7872ecbc.chunk.js.LICENSE.txt",
     "static/media/Conjunctivitis.svg": "/static/media/Conjunctivitis.21f702d9.svg",
     "static/media/Diarrhea.svg": "/static/media/Diarrhea.6b4bcf81.svg",
+    "static/media/a2hs.svg": "/static/media/a2hs.6c68dded.svg",
     "static/media/ache.svg": "/static/media/ache.0d18e232.svg",
     "static/media/cough.svg": "/static/media/cough.7f3c45a2.svg",
     "static/media/distance.svg": "/static/media/distance.510bf4af.svg",
@@ -36,8 +37,8 @@
   "entrypoints": [
     "static/js/runtime-main.396c5088.js",
     "static/css/2.d958fb3d.chunk.css",
-    "static/js/2.f3834345.chunk.js",
-    "static/css/main.594baf10.chunk.css",
-    "static/js/main.7eab4946.chunk.js"
+    "static/js/2.7872ecbc.chunk.js",
+    "static/css/main.cfd0839d.chunk.css",
+    "static/js/main.ae34a86b.chunk.js"
   ]
 }

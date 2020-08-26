@@ -16,7 +16,9 @@ self.addEventListener('activate', event => event.waitUntil(self.clients.claim())
 workbox.precaching.precacheAndRoute(self.__precacheManifest);
 
 // app-shell
-workbox.routing.registerRoute("/", new workbox.strategies.StaleWhileRevalidate());
+workbox.routing.registerRoute("/", new workbox.strategies.StaleWhileRevalidate({
+    cacheName: 'static-data'
+}));
 
 // JSON data
 workbox.routing.registerRoute(/.*disease.*/, new workbox.strategies.NetworkFirst({
