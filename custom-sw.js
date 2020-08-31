@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.836e38eaff1ab4c7991fc5b710417560.js", "/workbox-v4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.c1257801e72cd07c96fe432942cf346d.js", "/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/workbox-v4.3.1"});
 /* eslint-disable no-undef */
 
@@ -12,7 +12,10 @@ if (workbox) {
 
 
 self.addEventListener('install', event => event.waitUntil(self.skipWaiting()));
-self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
+self.addEventListener('activate', event => {
+    console.log('Activated!');
+    return event.waitUntil(self.clients.claim())
+});
 
 // We need this in Webpack plugin (refer to swSrc option): https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin#full_injectmanifest_config
 workbox.precaching.precacheAndRoute(self.__precacheManifest);
