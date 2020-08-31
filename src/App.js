@@ -9,16 +9,38 @@ import Table from './components/Table';
 import StatsMap from './components/StatsMap';
 import Info from './components/Info';
 import Footer from './components/Footer';
+import Snackbar from './components/Snackbar';
+import A2HS from './components/A2HS';
 
-export default function App() {
+export default function App(props) {
 	const [globalData, setGlobalData] = useState({});
 	const [countryData, setCountryData] = useState([]);
 	const [selectedCountry, setSelectedCountry] = useState(-1);
 	const [type, setType] = useState("NEW");
 	const [loading, setLoading] = useState(true);
+	const [deferredPrompt, setDeferredPrompt] = useState(null);
 
 	const handleCountryChange = (event) => {
 		setSelectedCountry(event.target.value);
+	}
+
+	//*** Code for Install Prompt */ 
+	window.addEventListener('beforeinstallprompt', (e) => {
+		e.preventDefault();
+		console.log('Before Install Prompt fired!');
+		setDeferredPrompt(e);
+		return false;
+	});
+
+	const onButtonClick = () => {
+		deferredPrompt.prompt();
+		deferredPrompt.userChoice.then((choice) => {
+			if(choice.outcome === 'dismissed'){
+				console.log('Declined!!');
+			}else{
+				setDeferredPrompt(null);
+			}
+		})
 	}
 
 	const handleTypeChange = (change) => {
@@ -30,9 +52,8 @@ export default function App() {
 			'Cache-Control': 'no-cache',
 			'Content-Type': 'application/json'
 		};
-
-		const req1 = axios.get(`https://disease.sh/v3/covid-19/all`, {headers});
-		const req2 = axios.get(`https://disease.sh/v3/covid-19/countries?sort=cases&allowNull=true`, {headers});
+		const req1 = axios.get(`https://disease.sh/v3/covid-19/all`, { headers });
+		const req2 = axios.get(`https://disease.sh/v3/covid-19/countries?sort=cases&allowNull=true`, { headers });
 
 		Promise.all([req1, req2]).then((values) => {
 			setGlobalData(values[0].data);
@@ -40,7 +61,6 @@ export default function App() {
 			setLoading(false);
 		}).catch((err) => {
 			setLoading(false);
-			alert("Error while fetching data!");
 		})
 	}, [])
 
@@ -63,6 +83,9 @@ export default function App() {
 					countryData={countryData}
 				/>
 
+				{(!deferredPrompt || !navigator.onLine) ? null: <A2HS type={type} handleButtonClick={onButtonClick} />}
+
+
 				<StatsMap
 					countryData={countryData}
 					selectedCountry={selectedCountry}
@@ -70,6 +93,8 @@ export default function App() {
 				/>
 
 				<Info />
+
+				{navigator.onLine ? null : <Snackbar message="Application offline!" time={8000} />}
 
 				<Footer />
 			</Fragment>}
