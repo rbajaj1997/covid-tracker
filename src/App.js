@@ -52,7 +52,6 @@ export default function App(props) {
 			'Cache-Control': 'no-cache',
 			'Content-Type': 'application/json'
 		};
-
 		const req1 = axios.get(`https://disease.sh/v3/covid-19/all`, { headers });
 		const req2 = axios.get(`https://disease.sh/v3/covid-19/countries?sort=cases&allowNull=true`, { headers });
 
@@ -62,7 +61,6 @@ export default function App(props) {
 			setLoading(false);
 		}).catch((err) => {
 			setLoading(false);
-			alert("Error while fetching data!");
 		})
 	}, [])
 
